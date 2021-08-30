@@ -10,12 +10,14 @@ dependencies {
     implementation project(':lib_annotation')
 
     //https://github.com/square/javapoet
-    implementation 'com.squareup:javapoet:1.11.1'
+    implementation 'com.squareup:javapoet:1.13.0'
 
-    implementation 'com.google.auto.service:auto-service:1.0-rc4'
-    //for gradle 5.x
-    annotationProcessor 'com.google.auto.service:auto-service:1.0-rc4'
+    //https://github.com/google/auto/tree/master/service
+    annotationProcessor 'com.google.auto.service:auto-service:1.0'
+    implementation 'com.google.auto.service:auto-service-annotations:1.0'
 }
 
-sourceCompatibility = "7"
-targetCompatibility = "7"
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}

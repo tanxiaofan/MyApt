@@ -59,6 +59,7 @@ class ClassCreator {
 
     private TypeSpec typeSpec() {
         return TypeSpec.classBuilder(className())
+                .addOriginatingElement(mTypeElement)
                 .addModifiers(Modifier.PUBLIC)
                 .addMethod(constructorMethod())
                 .build();

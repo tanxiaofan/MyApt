@@ -2,10 +2,10 @@ package com.github.tanxiaofan.apt;
 
 import com.github.tanxiaofan.annotation.BindView;
 import com.google.auto.service.AutoService;
-import com.google.common.collect.ImmutableSet;
 
 import java.lang.annotation.Annotation;
 import java.util.HashMap;
+import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -49,7 +49,9 @@ public class BindViewApt extends AbstractProcessor {
      */
     @Override
     public Set<String> getSupportedAnnotationTypes() {
-        return ImmutableSet.of(TARGET_CLASS.getName());
+        LinkedHashSet<String> hashSet = new LinkedHashSet<>();
+        hashSet.add(TARGET_CLASS.getName());
+        return hashSet;
     }
 
     /**
